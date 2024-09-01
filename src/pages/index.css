@@ -1,0 +1,124 @@
+/* 整个容器 */
+.word-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+/* 卡片样式 */
+.card {
+    border: 2px solid #ccc;
+    padding: 30px 50px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.card:hover {
+    border: 2px solid #007bff;
+    box-shadow: 0px 8px 15px rgba(0, 123, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+/* 卡片文字样式 */
+.card-word {
+    font-size: 24px;
+    font-weight: bold;
+    color: #343a40;
+}
+
+/* 按钮样式 */
+button {
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 按钮禁用状态 */
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* 导航区域 */
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 前缀信息部分 */
+.prefix-info {
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 190px;
+    overflow: hidden;
+}
+.prefix-info.hidden {
+    height: 0;
+    padding: 0;
+    border: none;
+}
+
+.prefix-info p {
+    font-size: 18px;
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.prefix-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.prefix-info li {
+    font-size: 16px;
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px 30px;
+    }
+
+    .card-word {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .prefix-info {
+        width: 90%;
+    }
+}
