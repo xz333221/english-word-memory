@@ -23,3 +23,9 @@ code {
   flex: 1;
   background-color: #f4f4f4;
 }
+
+.flex-center-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

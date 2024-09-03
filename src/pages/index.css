@@ -40,12 +40,17 @@ button {
     background-color: #007bff;
     border: none;
     color: #ffffff;
-    padding: 10px 20px;
-    margin: 0 10px;
+    padding: 15px 30px; /* 增大内边距 */
+    margin: 0 15px; /* 增大按钮间距 */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 24px; /* 增大字体大小 */
     transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* 设置宽度 */
+    height: 50px; /* 设置高度 */
 }
 
 button:hover {
@@ -59,11 +64,44 @@ button:disabled {
     cursor: not-allowed;
 }
 
+/* 认识按钮 */
+.button-recognized {
+    background-color: #28a745; /* 绿色 */
+    color: #ffffff;
+}
+
+.button-recognized:hover {
+    background-color: #218838;
+}
+
+/* 不认识按钮 */
+.button-unrecognized {
+    background-color: #dc3545; /* 红色 */
+    color: #ffffff;
+}
+
+.button-unrecognized:hover {
+    background-color: #c82333;
+}
+
+
 /* 导航区域 */
 .navigation {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+}
+
+/* 当前进度文本 */
+.header {
+    margin-bottom: 20px;
+    text-align: center; /* 使文本居中 */
+}
+
+.header p {
+    font-size: 18px; /* 调整字体大小 */
+    color: #495057;
+    margin: 0;
 }
 
 /* 前缀信息部分 */
@@ -80,6 +118,7 @@ button:disabled {
     height: 190px;
     overflow: hidden;
 }
+
 .prefix-info.hidden {
     height: 0;
     padding: 0;
@@ -103,6 +142,70 @@ button:disabled {
     margin-bottom: 5px;
 }
 
+/* 操作按钮 */
+.actions {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.actions button {
+    width: auto; /* 取消固定宽度 */
+    height: auto; /* 取消固定高度 */
+    padding: 10px 20px; /* 增大内边距 */
+    font-size: 18px; /* 调整字体大小 */
+}
+
+/* 前缀列表样式 */
+.prefix-list {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 300px; /* 设置最大高度 */
+    overflow-y: auto; /* 允许纵向滚动 */
+}
+
+.prefix-list h3 {
+    font-size: 20px;
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.prefix-list ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prefix-list li {
+    font-size: 16px;
+    color: #212529;
+    word-wrap: break-word; /* 自动换行 */
+    list-style: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 0 5px 10px 0;
+    cursor: pointer;
+}
+.prefix-list li:hover {
+    background-color: #dcecff;
+    color: #212529;
+}
+.prefix-list li.remembered{
+    background-color: #ffe6e6;
+    color: #212529;
+/*    删除线 */
+    text-decoration: line-through;
+}
+
 /* 响应式布局 */
 @media (max-width: 768px) {
     .card {
@@ -114,11 +217,23 @@ button:disabled {
     }
 
     button {
-        font-size: 16px;
-        padding: 8px 16px;
+        font-size: 18px; /* 调整字体大小 */
+        padding: 12px 24px; /* 增大内边距 */
     }
 
     .prefix-info {
         width: 90%;
+    }
+
+    .prefix-list {
+        padding: 15px;
+    }
+
+    .prefix-list h3 {
+        font-size: 18px;
+    }
+
+    .prefix-list li {
+        font-size: 14px;
     }
 }
