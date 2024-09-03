@@ -7,7 +7,7 @@ const Sidebar: React.FC = () => {
             <ul>
                 <li>
                     <NavLink
-                        to="/"
+                        to="/word/Home"
                         className={({isActive}) => (isActive ? 'active' : '')}
                     >
                         前缀
@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/About"
+                        to="/word/About"
                         className={({isActive}) => (isActive ? 'active' : '')}
                     >
                         后缀
