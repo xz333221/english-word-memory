@@ -7,7 +7,7 @@ module.exports = {
     },
     configure: (webpackConfig, { env, paths }) => {
       // 设置公共路径
-      const publicPath = env === 'production' ? './' : '/';
+      const publicPath = env === 'production' ? './' : './word'; // /word
       webpackConfig.output.publicPath = publicPath;
 
       return webpackConfig;
