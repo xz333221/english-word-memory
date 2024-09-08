@@ -3,409 +3,517 @@
  *  time:2024/8/30
  *  todo:$END$
  */
-let str: string = `* **un-**：表示“否定”或“相反”
-  - unhappy (形容词) 不开心的
-  - unaware (形容词) 不知道的
-  - undo (动词) 撤销
-  - unequal (形容词) 不平等的
-* **re-**：表示“再次”或“回”
-  - return (动词) 返回
-  - recycle (动词) 回收
-  - replay (动词) 重播
-  - rewrite (动词) 重写
-* **in-**：表示“否定”或“在…里面”
-  - invisible (形容词) 看不见的
-  - inappropriate (形容词) 不适当的
-  - insert (动词) 插入
-  - inspire (动词) 激励
-* **dis-**：表示“否定”或“分开”
-  - disagree (动词) 不同意
-  - disconnect (动词) 断开
-  - disappear (动词) 消失
-  - disadvantage (名词) 劣势
-* **im-**：表示“否定”或“在…里面”（用于m, p开头的单词）
-  - impossible (形容词) 不可能的
-  - immature (形容词) 不成熟的
-  - import (动词) 进口
-  - improve (动词) 改进
-* **pre-**：表示“在…之前”
-  - predict (动词) 预测
-  - preview (名词/动词) 预览
-  - prepare (动词) 准备
-  - prefix (名词) 前缀
-* **mis-**：表示“错误”或“坏的”
-  - misunderstand (动词) 误解
-  - mislead (动词) 误导
-  - mistake (名词/动词) 错误
-  - misuse (动词) 误用
-* **non-**：表示“否定”或“没有”
-  - nonstop (形容词/副词) 不间断的
-  - nonsense (名词) 胡说八道
-  - nonprofit (形容词) 非营利的
-  - nonviolent (形容词) 非暴力的
-* **sub-**：表示“在…下面”或“次级”
-  - submarine (名词) 潜水艇
-  - subconscious (形容词) 潜意识的
-  - substitute (名词/动词) 替代
-  - subway (名词) 地铁
-* **inter-**：表示“在…之间”或“相互”
-  - interact (动词) 互动
-  - international (形容词) 国际的
-  - intervene (动词) 干预
-  - interconnect (动词) 互联
-* **over-**：表示“过度”或“在…上”
-  - overeat (动词) 吃过多
-  - oversee (动词) 监督
-  - overload (动词) 超载
-  - overestimate (动词) 高估
-* **under-**：表示“不足”或“在…下”
-  - underestimate (动词) 低估
-  - underline (动词) 强调
-  - underweight (形容词) 体重不足的
-  - underground (形容词/名词) 地下的/地铁
-* **trans-**：表示“穿越”或“转变”
-  - transport (动词/名词) 运输
-  - transfer (动词/名词) 转移
-  - transform (动词) 转变
-  - transparent (形容词) 透明的
-* **co-**：表示“共同”或“合”
-  - cooperate (动词) 合作
-  - coexist (动词) 共存
-  - coauthor (名词/动词) 合著者/合著
-  - coordinate (动词) 协调
-* **ex-**：表示“向外”或“前任”
-  - export (动词/名词) 出口
-  - exclude (动词) 排除
-  - ex-president (名词) 前总统
-  - extend (动词) 延伸
-* **anti-**：表示“反对”或“抗”
-  - antibacterial (形容词) 抗菌的
-  - antiwar (形容词) 反战的
-  - antibody (名词) 抗体
-  - antisocial (形容词) 反社会的
-* **de-**：表示“向下”或“取消”
-  - decline (动词/名词) 下降
-  - deactivate (动词) 使无效
-  - degrade (动词) 降低
-  - detach (动词) 分离
-* **auto-**：表示“自己”或“自动”
-  - automatic (形容词) 自动的
-  - autobiography (名词) 自传
-  - autocrat (名词) 独裁者
-  - autopilot (名词) 自动驾驶仪
-* **bi-**：表示“二”或“两次”
-  - bilingual (形容词) 双语的
-  - bicycle (名词) 自行车
-  - bilateral (形容词) 双边的
-  - bimonthly (形容词/副词) 每两个月一次的
-* **multi-**：表示“多”
-  - multicultural (形容词) 多文化的
-  - multimedia (名词) 多媒体
-  - multiply (动词) 乘，繁殖
-  - multitask (动词) 多任务处理
-* **semi-**：表示“半”
-  - semicircle (名词) 半圆
-  - semiannual (形容词) 每半年一次的
-  - semiformal (形容词) 半正式的
-  - semifinal (名词) 半决赛
-* **hyper-**：表示“过度”或“超出”
-  - hyperactive (形容词) 过度活跃的
-  - hypersensitive (形容词) 过度敏感的
-  - hyperlink (名词) 超链接
-  - hypermarket (名词) 大型超市
-* **super-**：表示“超越”或“极度”
-  - superhero (名词) 超级英雄
-  - supermarket (名词) 超市
-  - superimpose (动词) 重叠
-  - superhuman (形容词) 超人的
-* **micro-**：表示“微小的”
-  - microscope (名词) 显微镜
-  - microbe (名词) 微生物
-  - microchip (名词) 微芯片
-  - microeconomics (名词) 微观经济学
-* **macro-**：表示“宏观”或“大规模”
-  - macroeconomics (名词) 宏观经济学
-  - macrophage (名词) 巨噬细胞
-  - macrocosm (名词) 宏观世界
-  - macronutrient (名词) 大量营养素
-* **tele-**：表示“远距离”
-  - telephone (名词/动词) 电话
-  - television (名词) 电视
-  - telecommunication (名词) 电信
-  - teleport (动词) 远距离传输
-* **uni-**：表示“单一”或“一个”
-  - unicycle (名词) 单轮车
-  - uniform (名词/形容词) 制服/一致的
-  - unify (动词) 统一
-  - unilateral (形容词) 单方面的
-* **tri-**：表示“三”
-  - triangle (名词) 三角形
-  - trilogy (名词) 三部曲
-  - tripod (名词) 三脚架
-  - tricycle (名词) 三轮车
-* **quad-**：表示“四”
-  - quadrilateral (名词) 四边形
-  - quadrant (名词) 象限
-  - quadruple (形容词/动词) 四倍的/使四倍
-  - quadruped (名词) 四足动物
-* **poly-**：表示“多”
-  - polygon (名词) 多边形
-  - polyglot (名词) 多语言者
-  - polyester (名词) 聚酯纤维
-  - polynomial (名词) 多项式
-* **hetero-**：表示“异”或“不同”
-  - heterosexual (形容词) 异性恋的
-  - heterogeneous (形容词) 异质的
-  - heterodox (形容词) 异端的
-  - heterocycle (名词) 杂环
-* **homo-**：表示“同”或“相同”
-  - homogeneous (形容词) 同质的
-  - homosexual (形容词) 同性恋的
-  - homonym (名词) 同音异义词
-  - homogenize (动词) 使均匀
-* **pro-**：表示“向前”或“支持”
-  - promote (动词) 促进
-  - project (名词/动词) 项目/投射
-  - professional (名词/形容词) 专业人员/专业的
-  - proactive (形容词) 积极主动的
-* **contra-**：表示“反对”或“对立”
-  - contradict (动词) 反驳
-  - contraband (名词) 违禁品
-  - contrary (形容词) 相反的
-  - contraception (名词) 避孕
-* **post-**：表示“在…之后”
-  - postpone (动词) 推迟
-  - postwar (形容词) 战后的
-  - postscript (名词) 附言
-  - postgraduate (名词) 研究生
-* **extra-**：表示“超出”或“额外”
-  - extraordinary (形容词) 非凡的
-  - extracurricular (形容词) 课外的
-  - extraterrestrial (形容词) 外星的
-  - extract (动词) 提取
-* **infra-**：表示“在…下面”或“低于”
-  - infrastructure (名词) 基础设施
-  - infrared (形容词) 红外的
-  - infrasonic (形容词) 次声的
-  - infralateral (形容词) 下侧的
-* **retro-**：表示“向后”或“回顾”
-  - retrospect (名词) 回顾
-  - retroactive (形容词) 追溯的
-  - retrograde (形容词/动词) 倒退的/倒退
-  - retrofit (动词) 改进
-* **neo-**：表示“新”或“现代”
-  - neoclassical (形容词) 新古典的
-  - neonate (名词) 新生儿
-  - neoliberal (形容词) 新自由主义的
-  - neophyte (名词) 新手
-* **ab-**：表示“离开”或“远离”
-  - abnormal (形容词) 异常的
-  - abduct (动词) 绑架
-  - abstract (形容词/名词/动词) 抽象的/摘要/提取
-  - abolish (动词) 废除
-* **ad-**：表示“朝向”或“增加”
-  - adapt (动词) 适应
-  - addition (名词) 添加
-  - adhere (动词) 粘附
-  - administer (动词) 管理
-* **bene-**：表示“好”或“有利”
-  - benefit (名词/动词) 利益/有益于
-  - benevolent (形容词) 仁慈的
-  - benefactor (名词) 捐助者
-  - beneficial (形容词) 有益的
-* **mal-**：表示“坏”或“恶”
-  - malfunction (名词/动词) 故障/失灵
-  - malnutrition (名词) 营养不良
-  - malpractice (名词) 渎职
-  - malice (名词) 恶意
-* **co-**：表示“共同”或“合”
-  - cooperate (动词) 合作
-  - coexist (动词) 共存
-  - coauthor (名词/动词) 合著者/合著
-  - coordinate (动词) 协调
-* **self-**：表示“自己”
-  - self-esteem (名词) 自尊
-  - self-discipline (名词) 自律
-  - self-employed (形容词) 自雇的
-  - self-defense (名词) 自卫
-* **sub-**：表示“在…下面”或“次级”
-  - submarine (名词) 潜水艇
-  - subconscious (形容词) 潜意识的
-  - substitute (名词/动词) 替代
-  - subway (名词) 地铁
-* **super-**：表示“超越”或“极度”
-  - superhero (名词) 超级英雄
-  - supermarket (名词) 超市
-  - superimpose (动词) 重叠
-  - superhuman (形容词) 超人的
-* **ultra-**：表示“极端”或“超越”
-  - ultramodern (形容词) 超现代的
-  - ultrasound (名词) 超声
-  - ultraviolet (形容词) 紫外线的
-  - ultrafast (形容词) 超快的
-* **ante-**：表示“在…之前”
-  - antecedent (名词) 先例
-  - antedate (动词) 早于
-  - anteroom (名词) 前厅
-  - anterior (形容词) 前部的
-* **epi-**：表示“在…之上”或“在…外”
-  - epicenter (名词) 震中
-  - epidermis (名词) 表皮
-  - epilogue (名词) 后记
-  - epidemic (名词/形容词) 流行病/流行的
-* **peri-**：表示“周围”或“关于”
-  - perimeter (名词) 周长
-  - periscope (名词) 潜望镜
-  - peripheral (形容词) 外围的
-  - periphery (名词) 边缘
-* **syn-**：表示“共同”或“联合”
-  - synchronize (动词) 同步
-  - synthesis (名词) 合成
-  - synergy (名词) 协同作用
-  - synopsis (名词) 概要
-* **com-**：表示“共同”或“合”
-  - combine (动词) 结合
-  - companion (名词) 伴侣
-  - compress (动词) 压缩
-  - communicate (动词) 沟通
-* **contra-**：表示“反对”或“对立”
-  - contradict (动词) 反驳
-  - contraband (名词) 违禁品
-  - contrary (形容词) 相反的
-  - contraception (名词) 避孕
-* **ob-**：表示“反对”或“面对”
-  - obstacle (名词) 障碍
-  - obscure (形容词/动词) 模糊的/使模糊
-  - obtain (动词) 获得
-  - obstruct (动词) 阻碍
-* **ex-**：表示“向外”或“前任”
-  - export (动词/名词) 出口
-  - exclude (动词) 排除
-  - ex-president (名词) 前总统
-  - extend (动词) 延伸
-* **ab-**：表示“离开”或“远离”
-  - abnormal (形容词) 异常的
-  - abduct (动词) 绑架
-  - abstract (形容词/名词/动词) 抽象的/摘要/提取
-  - abolish (动词) 废除
-* **ac-**：表示“向”或“加强”
-  - accelerate (动词) 加速
-  - accentuate (动词) 强调
-  - accessible (形容词) 可接近的
-  - accompany (动词) 陪伴
-* **be-**：表示“使成为”或“彻底”
-  - belittle (动词) 贬低
-  - befriend (动词) 结交朋友
-  - bewitched (形容词) 被迷住的
-  - besiege (动词) 围攻
-* **circum-**：表示“围绕”或“环绕”
-  - circumference (名词) 周长
-  - circumnavigate (动词) 环航
-  - circumvent (动词) 规避
-  - circumspect (形容词) 谨慎的
-* **dia-**：表示“穿过”或“在…之间”
-  - dialogue (名词) 对话
-  - diameter (名词) 直径
-  - diagnose (动词) 诊断
-  - diaphragm (名词) 隔膜
-* **en-**：表示“使”或“进入”
-  - enable (动词) 使能够
-  - ensure (动词) 确保
-  - enrich (动词) 丰富
-  - encircle (动词) 环绕
-* **eu-**：表示“好”或“良好”
-  - euphoria (名词) 狂喜
-  - eulogy (名词) 颂词
-  - euphemism (名词) 委婉语
-  - eugenics (名词) 优生学
-* **hypo-**：表示“低于”或“不足”
-  - hypothermia (名词) 体温过低
-  - hypotension (名词) 低血压
-  - hypoallergenic (形容词) 低过敏的
-  - hypothesis (名词) 假设
-* **hyper-**：表示“过度”或“超越”
-  - hyperactive (形容词) 过度活跃的
-  - hypertension (名词) 高血压
-  - hypersensitive (形容词) 过敏的
-  - hyperlink (名词) 超链接
-* **meta-**：表示“超越”或“变化”
-  - metaphysics (名词) 形而上学
-  - metamorphosis (名词) 变形
-  - metaphor (名词) 隐喻
-  - metadata (名词) 元数据
-* **omni-**：表示“全部”或“遍及”
-  - omniscient (形容词) 无所不知的
-  - omnipotent (形容词) 全能的
-  - omnipresent (形容词) 无处不在的
-  - omnivorous (形容词) 杂食的
-* **pan-**：表示“全部”或“广泛”
-  - pandemic (名词) 大流行病
-  - panorama (名词) 全景
-  - panacea (名词) 万能药
-  - pantheon (名词) 万神殿
-* **peri-**：表示“周围”或“附近”
-  - perimeter (名词) 周长
-  - periphery (名词) 边缘
-  - periscope (名词) 潜望镜
-  - perinatal (形容词) 围产期的
-* **poly-**：表示“多”或“多种”
-  - polygon (名词) 多边形
-  - polyglot (名词) 通晓多种语言的人
-  - polygamy (名词) 一夫多妻制或一妻多夫制
-  - polymer (名词) 聚合物
-* **proto-**：表示“原始”或“首”
-  - prototype (名词) 原型
-  - protagonist (名词) 主角
-  - protocol (名词) 协议
-  - protozoa (名词) 原生动物
-* **pseudo-**：表示“伪”或“假”
-  - pseudonym (名词) 假名
-  - pseudoscience (名词) 伪科学
-  - pseudocode (名词) 伪代码
-  - pseudo-intellectual (名词) 假装有学问的人
-* **re-**：表示“再”或“回”
-  - redo (动词) 重做
-  - return (动词/名词) 返回
-  - revise (动词) 修改
-  - rebound (动词/名词) 反弹
-* **semi-**：表示“半”或“部分”
-  - semicircle (名词) 半圆
-  - semiannual (形容词) 每半年一次的
-  - semifinal (名词) 半决赛
-  - semiautomatic (形容词) 半自动的
-* **tele-**：表示“远”或“遥远”
-  - telephone (名词) 电话
-  - television (名词) 电视
-  - telepathy (名词) 心灵感应
-  - telescope (名词) 望远镜
-* **trans-**：表示“穿过”或“转换”
-  - transport (动词/名词) 运输
-  - transform (动词) 转变
-  - transmit (动词) 传输
-  - translucent (形容词) 半透明的
-* **uni-**：表示“单一”或“唯一”
-  - unicycle (名词) 独轮车
-  - unison (名词) 齐唱
-  - uniform (名词/形容词) 制服/一致的
-  - unique (形容词) 独特的
-* **vice-**：表示“副”或“次”
-  - vice president (名词) 副总统
-  - viceroy (名词) 总督
-  - vice-chairman (名词) 副主席
-  - vice-principal (名词) 副校长
-* **mono-**：表示“单”或“独”
-  - monologue (名词) 独白
-  - monogamy (名词) 一夫一妻制
-  - monochrome (名词/形容词) 单色/单色的
-  - monopoly (名词) 垄断
-* **multi-**：表示“多”或“多重”
-  - multilingual (形容词) 多语的
-  - multimedia (名词) 多媒体
-  - multiply (动词) 乘，增加
-  - multilateral (形容词) 多边的`
+let str = `
+1. **un-** （否定）
+   - unhappy (adj.) 不快乐的
+   - unfair (adj.) 不公平的
+   - undo (v.) 撤销
+   - unclear (adj.) 不清楚的
+
+2. **re-** （再，重复）
+   - rewrite (v.) 重写
+   - return (v.) 归还
+   - replay (v.) 重播
+   - redo (v.) 重做
+
+3. **in-** （否定）
+   - inactive (adj.) 不活跃的
+   - incorrect (adj.) 错误的
+   - invisible (adj.) 看不见的
+   - inefficient (adj.) 低效的
+
+4. **dis-** （否定，分开）
+   - disappear (v.) 消失
+   - disagree (v.) 不同意
+   - disconnect (v.) 断开
+   - dislike (v.) 不喜欢
+
+5. **pre-** （在…之前）
+   - pretest (n.) 预测试
+   - preview (v.) 预览
+   - predict (v.) 预测
+   - preheat (v.) 预热
+
+6. **mis-** （错误）
+   - misunderstand (v.) 误解
+   - mislead (v.) 误导
+   - misplace (v.) 放错地方
+   - misuse (v.) 滥用
+
+7. **non-** （无，不）
+   - nonstop (adj.) 不间断的
+   - nonprofit (adj.) 非营利的
+   - nonhuman (adj.) 非人类的
+   - nonviolent (adj.) 非暴力的
+
+8. **sub-** （下，次等）
+   - submarine (n.) 潜水艇
+   - subway (n.) 地铁
+   - subordinate (adj.) 从属的
+   - submerge (v.) 淹没
+
+9. **inter-** （在…之间）
+   - international (adj.) 国际的
+   - interact (v.) 互动
+   - interfere (v.) 干涉
+   - internet (n.) 互联网
+
+10. **over-** （过度）
+   - overeat (v.) 吃得过多
+   - overwork (v.) 过度工作
+   - overestimate (v.) 高估
+   - overreact (v.) 反应过度
+
+11. **under-** （不足，下）
+   - underweight (adj.) 体重不足的
+   - underestimate (v.) 低估
+   - underpay (v.) 工资过低
+   - underground (adj.) 地下的
+
+12. **anti-** （反）
+   - antisocial (adj.) 反社会的
+   - antibiotic (n.) 抗生素
+   - antidote (n.) 解毒剂
+   - antifreeze (n.) 防冻剂
+
+13. **de-** （减少，去除）
+   - defrost (v.) 解冻
+   - degrade (v.) 降级
+   - deactivate (v.) 停用
+   - detoxify (v.) 排毒
+
+14. **ex-** （前，出去）
+   - ex-president (n.) 前总统
+   - export (v.) 出口
+   - exclude (v.) 排除
+   - exit (v.) 离开
+
+15. **en-** （使…成为）
+   - enable (v.) 使能够
+   - enlarge (v.) 扩大
+   - enrich (v.) 使丰富
+   - enforce (v.) 执行
+
+16. **pro-** （支持，向前）
+   - promote (v.) 推广
+   - proceed (v.) 继续
+   - proactive (adj.) 积极主动的
+   - protect (v.) 保护
+
+17. **auto-** （自动）
+   - automobile (n.) 汽车
+   - automatic (adj.) 自动的
+   - autograph (n.) 签名
+   - autopilot (n.) 自动驾驶仪
+
+18. **bi-** （两，双）
+   - bicycle (n.) 自行车
+   - bilingual (adj.) 双语的
+   - biweekly (adj.) 每两周的
+   - bisect (v.) 平分
+
+19. **multi-** （多）
+   - multilingual (adj.) 多语言的
+   - multitask (v.) 多任务处理
+   - multimillionaire (n.) 亿万富翁
+   - multinational (adj.) 跨国的
+
+20. **trans-** （横过，穿越）
+   - transport (v.) 运输
+   - translate (v.) 翻译
+   - transplant (v.) 移植
+   - transfer (v.) 转移
+
+21. **post-** （在…之后）
+   - postgraduate (n.) 研究生
+   - postwar (adj.) 战后的
+   - postpone (v.) 推迟
+   - postscript (n.) 附言
+
+22. **co-** （共同）
+   - cooperate (v.) 合作
+   - coauthor (n.) 合著者
+   - coexist (v.) 共存
+   - coworker (n.) 同事
+
+23. **super-** （超级，超出）
+   - superhero (n.) 超级英雄
+   - supernatural (adj.) 超自然的
+   - supermarket (n.) 超市
+   - supervisor (n.) 主管
+
+24. **hyper-** （过度，超）
+   - hyperactive (adj.) 过度活跃的
+   - hypertension (n.) 高血压
+   - hyperlink (n.) 超链接
+   - hypersensitive (adj.) 过敏的
+
+25. **semi-** （半，部分）
+   - semicircle (n.) 半圆
+   - semiannual (adj.) 每半年一次的
+   - semiconscious (adj.) 半清醒的
+   - semifinal (n.) 半决赛
+
+26. **tele-** （远程）
+   - television (n.) 电视
+   - telescope (n.) 望远镜
+   - teleport (v.) 远距离传送
+   - telegraph (n.) 电报
+
+27. **mono-** （单一）
+   - monotone (n.) 单调
+   - monologue (n.) 独白
+   - monolingual (adj.) 单语言的
+   - monocle (n.) 单片眼镜
+
+28. **fore-** （前，预先）
+   - forecast (v.) 预报
+   - forehead (n.) 前额
+   - foresee (v.) 预见
+   - forefront (n.) 最前线
+
+29. **circum-** （环绕）
+   - circumnavigate (v.) 环航
+   - circumstance (n.) 情况
+   - circumvent (v.) 规避
+   - circumference (n.) 圆周
+
+30. **contra-** （反对）
+   - contradict (v.) 反驳
+   - contravene (v.) 违反
+   - contrast (v.) 对比
+   - contraceptive (n.) 避孕药
+
+31. **extra-** （额外的）
+   - extraordinary (adj.) 非凡的
+   - extracurricular (adj.) 课外的
+   - extraterrestrial (adj.) 地球外的
+   - extravert (n.) 外向的人
+
+32. **macro-** （大，宏观）
+   - macroeconomics (n.) 宏观经济学
+   - macroscopic (adj.) 宏观的
+   - macromolecule (n.) 大分子
+   - macrostructure (n.) 宏观结构
+
+33. **micro-** （小，微观）
+   - microscope (n.) 显微镜
+   - microbe (n.) 微生物
+   - microchip (n.) 微芯片
+   - microbiology (n.) 微生物学
+
+34. **poly-** （多）
+   - polygon (n.) 多边形
+   - polyester (n.) 聚酯
+   - polyglot (adj.) 多语言的
+   - polynomial (n.) 多项式
+
+35. **tri-** （三）
+   - triangle (n.) 三角形
+   - tripod (n.) 三脚架
+   - tricycle (n.) 三轮车
+   - trilateral (adj.) 三边的
+
+36. **hemi-** （半）
+   - hemisphere (n.) 半球
+   - hemiplegia (n.) 半身不遂
+   - hemistich (n.) 半行诗
+   - hemicycle (n.) 半圆形
+
+38. **para-** （旁边，辅助）
+   - parallel (adj.) 平行的
+   - parachute (n.) 降落伞
+   - parasol (n.) 阳伞
+   - paramedic (n.) 辅助的
+
+39. **pseudo-** （假，伪）
+   - pseudonym (n.) 笔名，假名
+   - pseudoscience (n.) 伪科学
+   - pseudopod (n.) 伪足
+   - pseudoclassic (adj.) 伪古典的
+
+40. **acro-** （高，顶点）
+   - acrobat (n.) 杂技演员
+   - acronym (n.) 缩写词
+   - acrophobia (n.) 恐高症
+   - acropolis (n.) 城堡
+
+41. **hydro-** （水）
+   - hydroelectric (adj.) 水力发电的
+   - hydrogen (n.) 氢
+   - hydrate (v.) 补充水分
+   - hydropower (n.) 水力发电
+
+42. **bio-** （生命，生物）
+   - biology (n.) 生物学
+   - biography (n.) 传记
+   - biome (n.) 生物群系
+   - biodegradable (adj.) 可生物降解的
+
+43. **geo-** （地球，土地）
+   - geology (n.) 地质学
+   - geography (n.) 地理学
+   - geothermal (adj.) 地热的
+   - geocentric (adj.) 地心的
+
+44. **chrono-** （时间）
+   - chronology (n.) 年代学
+   - chronicle (n.) 编年史
+   - synchronize (v.) 同步
+   - chronometer (n.) 精密计时器
+
+45. **thermo-** （热）
+   - thermometer (n.) 温度计
+   - thermal (adj.) 热的
+   - thermodynamics (n.) 热力学
+   - thermostat (n.) 恒温器
+
+46. **phono-** （声音）
+   - phonograph (n.) 留声机
+   - phonetic (adj.) 语音的
+   - telephone (n.) 电话
+   - microphone (n.) 麦克风
+
+47. **photo-** （光）
+   - photograph (n.) 照片
+   - photocopy (n.) 复印件
+   - photosynthesis (n.) 光合作用
+   - photon (n.) 光子
+
+48. **astro-** （星，宇宙）
+   - astronaut (n.) 宇航员
+   - astronomy (n.) 天文学
+   - asteroid (n.) 小行星
+   - astrophysics (n.) 天体物理学
+
+49. **electro-** （电）
+   - electronics (n.) 电子学
+   - electrode (n.) 电极
+   - electrocardiogram (n.) 心电图
+   - electrolyte (n.) 电解质
+
+51. **bene-** （好，益处）
+   - benefit (n.) 益处
+   - benevolent (adj.) 仁慈的
+   - benign (adj.) 良性的
+   - benefactor (n.) 慈善家
+
+53. **epi-** （在…之上）
+   - epicenter (n.) 震中
+   - epidermis (n.) 表皮
+   - epidemic (n.) 流行病
+   - epitaph (n.) 墓志铭
+
+54. **peri-** （周围）
+   - perimeter (n.) 周长
+   - periscope (n.) 潜望镜
+   - peripheral (adj.) 外围的
+   - periphery (n.) 边缘
+
+55. **syn-** （共同）
+   - synchronize (v.) 同步
+   - synergy (n.) 协同作用
+   - synthesis (n.) 合成
+   - synonym (n.) 同义词
+
+56. **ultra-** （极端，超越）
+   - ultraviolet (adj.) 紫外线的
+   - ultramodern (adj.) 超现代的
+   - ultrasonic (adj.) 超声波的
+   - ultralight (adj.) 极轻的
+
+57. **infra-** （下，低于）
+   - infrared (adj.) 红外线的
+   - infrastructure (n.) 基础设施
+   - infrahuman (adj.) 次人类的
+   - infrasonic (adj.) 次声的
+
+58. **meta-** （超越，改变）
+   - metamorphosis (n.) 变形
+   - metaphor (n.) 隐喻
+   - metaphysics (n.) 形而上学
+   - metadata (n.) 元数据
+
+59. **pan-** （全，广泛）
+   - panorama (n.) 全景
+   - pandemic (n.) 大流行病
+   - panacea (n.) 万能药
+   - pan-American (adj.) 泛美的
+
+60. **eu-** （好，优）
+   - euphemism (n.) 委婉语
+   - euphoria (n.) 狂喜
+   - eulogy (n.) 颂词
+   - euphonious (adj.) 悦耳的
+
+61. **mal-** （坏，恶）
+   - malfunction (n.) 故障
+   - malnutrition (n.) 营养不良
+   - malice (n.) 恶意
+   - malpractice (n.) 渎职
+
+62. **omni-** （全，遍）
+   - omnipresent (adj.) 无处不在的
+   - omnipotent (adj.) 全能的
+   - omniscient (adj.) 无所不知的
+   - omnivore (n.) 杂食动物
+
+63. **aqua-** （水）
+   - aquarium (n.) 水族馆
+   - aquatic (adj.) 水生的
+   - aqueduct (n.) 水道
+   - aquifer (n.) 含水层
+
+64. **ante-** （在…之前）
+   - anterior (adj.) 前面的
+   - antedate (v.) 提前日期
+   - antechamber (n.) 前厅
+   - antecedent (n.) 前情
+
+65. **counter-** （反对，相反）
+   - counteract (v.) 抵制
+   - counterpart (n.) 对应的人或物
+   - counterattack (n.) 反击
+   - counterfeit (adj.) 假冒的
+
+66. **vice-** （副，代理）
+   - vice-president (n.) 副总统
+   - viceroy (n.) 总督
+   - vice-chairman (n.) 副主席
+   - vice-chancellor (n.) 副校长
+
+67. **uni-** （一，单一）
+   - uniform (n.) 制服
+   - unicycle (n.) 独轮车
+   - unique (adj.) 独特的
+   - unity (n.) 团结
+
+68. **quad-** （四）
+   - quadrilateral (n.) 四边形
+   - quadruple (adj.) 四倍的
+   - quadruped (n.) 四足动物
+   - quadrant (n.) 象限
+
+69. **penta-** （五）
+   - pentagon (n.) 五边形
+   - pentathlon (n.) 五项全能
+   - pentameter (n.) 五音步诗
+   - pentarchy (n.) 五人统治
+
+70. **hexa-** （六）
+   - hexagon (n.) 六边形
+   - hexadecimal (adj.) 十六进制的
+   - hexapod (n.) 六足动物
+   - hexagram (n.) 六芒星
+
+71. **sept-** （七）
+   - septennial (adj.) 每七年的
+   - septuplets (n.) 七胞胎
+   - septangle (n.) 七角形
+   - septuagint (n.) 七十士译本
+
+72. **octo-** （八）
+   - octopus (n.) 章鱼
+   - octagon (n.) 八边形
+   - octogenarian (n.) 八十多岁的人
+   - octave (n.) 八度音阶
+
+73. **novem-** （九）
+   - November (n.) 十一月（旧历的九月）
+   - novennial (adj.) 每九年的
+   - novemdigitate (adj.) 九指的
+   - novemdecillion (n.) 十的六十次方
+
+74. **deca-** （十）
+   - decade (n.) 十年
+   - decagon (n.) 十边形
+   - decathlon (n.) 十项全能
+   - decapod (n.) 十足动物
+
+75. **cent-** （百）
+   - century (n.) 世纪
+   - centennial (adj.) 百年纪念的
+   - centipede (n.) 蜈蚣
+   - centigrade (adj.) 摄氏的
+
+76. **milli-** （千）
+   - millimeter (n.) 毫米
+   - millennium (n.) 一千年
+   - millipede (n.) 千足虫
+   - millisecond (n.) 毫秒
+
+77. **kilo-** （千）
+   - kilogram (n.) 千克
+   - kilometer (n.) 公里
+   - kilowatt (n.) 千瓦
+   - kilobyte (n.) 千字节
+
+78. **nano-** （十亿分之一，极小）
+   - nanosecond (n.) 纳秒
+   - nanotechnology (n.) 纳米技术
+   - nanometer (n.) 纳米
+   - nanoparticle (n.) 纳米粒子
+
+80. **mega-** （大，百万）
+   - megaphone (n.) 扩音器
+   - megabyte (n.) 兆字节
+   - megawatt (n.) 兆瓦
+   - megastar (n.) 大明星
+
+81. **giga-** （十亿）
+   - gigabyte (n.) 千兆字节
+   - gigahertz (n.) 吉赫兹
+   - gigaflop (n.) 十亿次浮点运算
+   - gigawatt (n.) 十亿瓦
+
+83. **iso-** （等，同）
+   - isometric (adj.) 等距的
+   - isosceles (adj.) 等腰的
+   - isobar (n.) 等压线
+   - isotope (n.) 同位素
+
+84. **hetero-** （异，不同）
+   - heterogeneous (adj.) 异类的
+   - heterosexual (adj.) 异性恋的
+   - heterodoxy (n.) 异端
+   - heteromorphic (adj.) 异形的
+
+85. **homo-** （相同）
+   - homogeneous (adj.) 同质的
+   - homonym (n.) 同音异义词
+   - homosexual (adj.) 同性恋的
+   - homophone (n.) 同音字
+
+87. **neo-** （新）
+   - neonatal (adj.) 新生儿的
+   - neoclassic (adj.) 新古典主义的
+   - neologism (n.) 新词
+   - neoliberal (adj.) 新自由主义的
+
+90. **crypto-** （秘密，隐）
+   - cryptography (n.) 密码学
+   - cryptic (adj.) 隐秘的
+   - cryptocurrency (n.) 加密货币
+   - cryptogram (n.) 密码
+`
+
 let prefixes: string[] = str.match(/\*\*(.*?)\*\*/g)?.map(match => match.replace(/\*\*/g, '')) || [];
 console.log(`prefixes ==> `, prefixes)
 console.log(`prefixes.length ==> `, prefixes.length)
+
+const duplicates = prefixes.reduce((acc, item, index, arr) => {
+  // @ts-ignore
+  if (arr.indexOf(item) !== index && !acc.includes(item)) {
+    // @ts-ignore
+    acc.push(item);
+  }
+  return acc;
+}, []);
+
+console.log(duplicates); // 输出：[1, 2, 3]
+let set = new Set(prefixes);
+let len = set.size;
+console.log(`len ==> `, len)
 interface PrefixInfo {
   prefix: string;
   explanation: string;
@@ -413,12 +521,14 @@ interface PrefixInfo {
 }
 export const getPrefixInfo = (prefix: string): PrefixInfo | null => {
   // let reg = new RegExp(`\\* \\*\\*${prefix}\\*\\*：(.*?)\\n((?:  - .+(?:\\n|$))*)`, 's');
-  const regex = new RegExp(`\\* \\*\\*${prefix}\\*\\*：(.*?)\\n((?:  - .+(?:\\n|$))*)`, 's');
+  const regex = new RegExp(`\\*\\*${prefix}\\*\\*(.*?)\\n((?:\\s*- .+(?:\\n|$))*)`, 's');
+  // const regex = /\*\*pseudo-\*\*(.*?)\n(?:\s*-([\s\S])*\s*\n)/s;
   const match = str.match(regex);
+  console.log(`match ==> `, match)
 
   // 如果匹配成功，返回解释和例子
   if (match) {
-    const explanation = match[1].trim(); // 前缀解释
+    const explanation = match[1].trim().replace(/[（）]/g, ''); // 前缀解释
     const examples = match[2]
         .trim()
         .split('\n')

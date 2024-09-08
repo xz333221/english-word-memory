@@ -11,16 +11,20 @@ interface PrefixInfo {
 
 const Prefix: React.FC = () => {
     const [prefixIndex, setPrefixIndex] = useState(0); // 当前前缀索引
+    const [currentPrefix, setCurrentPrefixIndex] = useState(''); //
     const [prefixInfo, setPrefixInfo] = useState<PrefixInfo | null>(null);
     const [showAllPrefixes, setShowAllPrefixes] = useState(false); // 是否显示所有前缀
     const [rememberedPrefixes, setRememberedPrefixes] = useState<Set<string>>(
         new Set(JSON.parse(localStorage.getItem('rememberedPrefixes') || '[]'))
     );
 
+
+
     // 获取当前前缀
-    const currentPrefixList = showAllPrefixes ? prefixes : prefixes.filter(p => !rememberedPrefixes.has(p));
+    const currentPrefixList = showAllPrefixes ? prefixes : prefixes.filter(p => !rememberedPrefixes.has(p) || p === currentPrefix);
+    const actualPrefixList = showAllPrefixes ? prefixes : prefixes.filter(p => !rememberedPrefixes.has(p));
     const prefix = currentPrefixList[prefixIndex];
-    const totalPrefixes = currentPrefixList.length;
+    let totalPrefixes = actualPrefixList.length;
     const currentPrefixNumber = prefixIndex + 1;
 
     // 切换前缀
@@ -31,8 +35,10 @@ const Prefix: React.FC = () => {
                 newIndex = prevIndex > 0 ? prevIndex - 1 : totalPrefixes - 1;
             } else {
                 newIndex = prevIndex < totalPrefixes - 1 ? prevIndex + 1 : 0;
+                if(currentPrefix) newIndex -= 1;
             }
             setPrefixInfo(null); // 清空前缀信息
+            setCurrentPrefixIndex('');
             return newIndex;
         });
     };
@@ -45,11 +51,12 @@ const Prefix: React.FC = () => {
 
     // 处理按钮点击事件
     const handleRemember = () => {
+        handleClick();
+        setCurrentPrefixIndex(prefix);
         const updatedRemembered = new Set(rememberedPrefixes);
         updatedRemembered.add(prefix);
         setRememberedPrefixes(updatedRemembered);
         localStorage.setItem('rememberedPrefixes', JSON.stringify(Array.from(updatedRemembered)));
-        handleClick();
     };
 
     const handleForget = () => {
