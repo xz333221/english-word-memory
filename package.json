@@ -26,7 +26,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "g:y": "g -y"
   },
   "eslintConfig": {
     "extends": [
